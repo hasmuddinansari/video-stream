@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Streaming</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    padding: 20px;
+    background-color: rgb(22, 22, 22);
+  }
+
+  .video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    gap: 10px
+  }
+  .video-container div {
+    width: 50%;
+  }
+  h4 {
+    padding: 10px
+  }
+
+  video {
+    width: 100%;
+    display: block;
+    outline: none;
+  }
+
+  .video-controls {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+  }
+
+  .video-controls button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 10px;
+    outline: none;
+  }
+
+  .video-controls button:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<div class="video-container">
+   <div>
+    <h4>Full Video Load</h4>
+     <video id="videoPlayer" width="50%" controls muted="muted" autoplay>
+        <source src="/full-video" type="video/mp4" />
+     </video>
+  </div>
+  <div>
+    <h4>Server Stream in chunks</h4>
+   <video id="videoPlayer" width="50%" controls muted="muted" autoplay>
+        <source src="/stream-video" type="video/mp4" />
+    </video>
+    </div>
+</div>
+</body>
+</html>
